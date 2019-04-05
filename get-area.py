@@ -14,21 +14,32 @@ def getArea(shape):
         return main()
 
 def rectangleArea():
-    lenght = float(input("Enter the length: "))
-    width = float(input("Enter the width: "))
-    area = lenght*width
-    print("The area of the rectangle is: {:.2f}".format(area))
+    try:
+        lenght = float(input("Enter the length: "))
+        width = float(input("Enter the width: "))
+        area = lenght*width
+        print("The area of the rectangle is: {:.2f}".format(area))
+    except ValueError:
+        print("Please enter a number")
+        return rectangleArea()
 def circleArea():
-    radius = float(input("Enter the radius: "))
-    area = math.pi * (math.pow(radius,2))
-    print("The area of the circle is: {:.2f}".format(area))
+    try:
+        radius = float(input("Enter the radius: "))
+        area = math.pi * (math.pow(radius,2))
+        print("The area of the circle is: {:.2f}".format(area))
+    except ValueError:
+        print("Please enter a number")
+        return circleArea()
 def triangleArea():
-    height = float(input("Enter the height: "))
-    base = float(input("Enter the base: "))
-    area = height * base / 2
-    print("The area of the triangle is: {:.2f}".format(area))
-
+    try:
+        height = float(input("Enter the height: "))
+        base = float(input("Enter the base: "))
+        area = height * base / 2
+        print("The area of the triangle is: {:.2f}".format(area))
+    except ValueError:
+        print("Please enter a number")
+        return triangleArea()
 def main():
-    type_of_shape = input("Enter the shape type\nr for rectangle\nc for circle\nt for triangle\n")
+    type_of_shape = input("r for rectangle\nc for circle\nt for triangle\nEnter the shape type: ")
     getArea(type_of_shape)
 main()
