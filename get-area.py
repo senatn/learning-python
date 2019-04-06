@@ -2,6 +2,7 @@ import math
 
 def getArea(shape):
     shape = shape.lower()
+
     if shape == "r":
         rectangleArea()
     elif shape == "c":
@@ -11,6 +12,7 @@ def getArea(shape):
     else:
         print("Please enter 'r', 'c' or 't' ")
         return main()
+
 def rectangleArea():
     try:
         lenght = float(input("Enter the length: "))
