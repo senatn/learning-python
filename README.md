@@ -7,3 +7,6 @@ swapping the adjacent elements if they are in wrong order.
 # get-area
 to calculate the areas of simple geometric shapes
 # password-checker
+program to check the validity of a password 
+# draw-a-square
+a program that inputs the length of the square and draws it using "*"
