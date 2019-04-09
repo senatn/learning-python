@@ -5,7 +5,11 @@ i = 1
 while True:
     try:
         guess = int(input("Guess a number between 1 and 10 : "))
-        if guess != secret_number:
+        if guess < secret_number:
+            print("Too low! ")
+            i += 1
+        if guess > secret_number:
+            print("Too high! ")
             i += 1
         elif guess == secret_number:
             print("Yaay! You guessed it! Secret number is {} and you guessed it {} times. " .format(secret_number, i))
