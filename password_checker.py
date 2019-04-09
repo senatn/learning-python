@@ -36,7 +36,7 @@ def passwordCheck(password):
             if check_list[i] == pass_list[i]:
                 i += 1
                 if i == len(check_list):
-                    print("oldu")
+                    print("Password is correct! ")
             else:
                 count += 1
                 print("You have entered the wrong password. Please try again.")
