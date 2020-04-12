@@ -29,22 +29,24 @@ def passwordCheck(password):
     check_list = list(password_check)
     pass_list = list(password)
     global count
-    if count == 2:
-        print("You have entered your password incorrect three times! ")
-    elif len(check_list) == len(pass_list):
-        for i in range(0,len(check_list)):
+
+    if len(check_list) == len(pass_list):
+        for i in range(len(check_list)):
             if check_list[i] == pass_list[i]:
                 i += 1
                 if i == len(check_list):
                     print("Password is correct! ")
-            else:
-                count += 1
-                print("You have entered the wrong password. Please try again.")
-                return passwordCheck(password)
+    elif count == 2:
+        print("You have entered your password incorrect three times! ")
     else:
-        count += 1
-        print("You have entered the wrong password. Please try again.")
-        return passwordCheck(password)
+        if count == 1:
+            count +=1
+            print("You have entered the wrong password two times. This is your last change!")
+            return passwordCheck(password)
+        else:
+            count += 1
+            print("You have entered the wrong password. Please try again.")
+            return passwordCheck(password)
 
 def main():
     password = input("Passwords must contain at least eight characters, "
