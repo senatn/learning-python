@@ -52,14 +52,8 @@ def main():
     password = input("Passwords must contain at least eight characters, "
                      "including at least 1 letter and 1 number.\n"
                      "Please enter your new password: ")
-    flag = 0
-    if lengthCheck(password) == True:
-        flag += 1
-    if letterCheck(password) == True:
-        flag += 1
-    if numCheck(password) == True:
-        flag += 1
-    if flag == 3:
+
+    if all([lengthCheck(password),letterCheck(password),numCheck(password)]):
         print("The password is saved.")
         passwordCheck(password)
     else:
